@@ -7,7 +7,7 @@ from binance.exceptions import BinanceAPIException, BinanceOrderException
 from requests.exceptions import RequestException
 from binance import AsyncClient, BinanceSocketManager
 
-# Initialize Binance API client with environment variables for security
+# Initialize Binance API client 
 api_key = os.getenv('BINANCE_API_KEY')
 api_secret = os.getenv('BINANCE_API_SECRET')
 client = Client(api_key, api_secret)
@@ -20,7 +20,7 @@ logging.basicConfig(filename='arbitrage_bot.log', level=logging.INFO,
 MAX_RETRIES = 5
 RETRY_DELAY = 2  # Seconds
 
-# Fee rates (example values, adjust based on your Binance account level)
+# Fee rates 
 SPOT_FEE_RATE = 0.075 / 100
 FUTURES_FEE_RATE = 0.05 / 100
 
@@ -233,9 +233,9 @@ async def main():
                     'initial_spread': initial_spread
                 }
 
-            await asyncio.sleep(10)  # Adjust the sleep time as needed for monitoring
+            await asyncio.sleep(10)  # Adjust the sleep time 
 
-        await asyncio.sleep(5)  # Adjust the polling interval as needed
+        await asyncio.sleep(5)  # Adjust the polling interval 
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
